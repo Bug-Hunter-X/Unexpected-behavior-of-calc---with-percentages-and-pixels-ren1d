@@ -1,0 +1,15 @@
+To resolve this issue, it's recommended to avoid mixing percentage and pixel values directly within the `calc()` function. Instead, use percentages consistently, or if pixel values are required, ensure a consistent baseline.  This often means calculating the pixel value beforehand and using it as a fixed value.
+
+Here's a potential solution:
+
+```css
+#container {
+  width: 300px; /* Example container width */
+}
+
+#myElement {
+  width: calc(50% - (300px * 0.1)); /* 10px is 10/300=3.33% of 300px */
+}
+```
+
+Alternatively, if the container width is not fixed and you must use pixels, consider using a JavaScript solution to calculate the pixel value dynamically once the page renders and then setting the width of #myElement using JavaScript.
